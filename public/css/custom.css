@@ -1,0 +1,39 @@
+.header {
+    background-color: #17A589;
+}
+.nav>li>a:focus, .nav>li>a:hover, .nav>li.active>a {
+    text-decoration: none;
+    color: #117864;
+    background-color: #eee;
+}
+.main-footer a, .soundwave-name {
+    color:  #117864 !important;
+}
+footer.main-footer {
+    border-top: 1px solid #ccc;  
+}
+a.edit-row {
+    background: #138D75;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 27px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+a.delete-row { 
+    background:#E74C3C;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 27px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+a.btn.btn-primary.add-discount{
+	background: #117864
+}

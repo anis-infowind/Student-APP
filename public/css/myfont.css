@@ -1,0 +1,19 @@
+@font-face {
+    font-family: EdwardianScriptITC;
+    src: url('./myfonts/EdwardianScriptITC.eot');
+    src: url('./myfonts/EdwardianScriptITC.eot?#iefix')
+             format('embedded-opentype'),
+         url('./myfonts/EdwardianScriptITC.woff') format('woff'),
+     url('./myfonts/EdwardianScriptITC.svg#webfont') format('svg'),
+       url('./myfonts/EdwardianScriptITC.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: times;
+    src: url('./myfonts/times.eot');
+    src: url('./myfonts/times.eot?#iefix')
+             format('embedded-opentype'),
+         url('./myfonts/times.woff') format('woff'),
+     url('./myfonts/times.svg#webfont') format('svg'),
+       url('./myfonts/times.ttf') format('truetype'); 
+}

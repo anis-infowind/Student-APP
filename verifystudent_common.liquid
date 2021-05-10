@@ -1,0 +1,24 @@
+<script>
+{% assign verifystudentapps_page_type = "" %}
+  window.verifystudentapps = {
+    shop_slug: "{{shop.permanent_domain | remove: '.myshopify.com' }}",
+    store_id: "{{shop.permanent_domain}}",
+    money_format: "{{shop.money_format | replace: '"', "'"}}",
+    store_currency: "{{shop.currency}}",
+    cart: null,
+    calculated_option_total: 0.00,
+    is_volume_discount: null,
+    product_id: null,
+    page_type: null,
+    template_type: null,
+    theme_id: {{ theme.id }},
+    po_url: "https://verifystudent.framework.infowindtech.biz",
+  }
+
+
+{% if template contains "product" %}
+  window.verifystudentapps.page_type = "product";
+  window.verifystudentapps.product_id = "{{ product.id }}";
+{% endif %}
+
+</script>

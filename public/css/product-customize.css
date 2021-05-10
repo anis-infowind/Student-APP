@@ -1,0 +1,2233 @@
+body{
+
+  margin:0px;
+
+  padding:0px;
+
+  color:#000;
+
+/*   overflow: hidden; */
+
+  background-color: #f5f5f5!important;
+
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+/***************************reset*********************/
+
+html, body, div, span, applet, object, iframe,
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+
+a, abbr, acronym, address, big, cite, code,
+
+del, dfn, em, img, ins, kbd, q, s, samp,
+
+small, strike, strong, sub, sup, tt, var,
+
+b, u, i, center,
+
+dl, dt, dd, ol, ul, li,
+
+fieldset, form, label, legend,
+
+table, caption, tbody, tfoot, thead, tr, th, td,
+
+article, aside, canvas, details, embed, 
+
+figure, figcaption, footer, header, hgroup,
+
+menu, nav, output, ruby, section, summary,
+
+time, mark, audio, video {
+
+    border: 0;
+
+   /* font-size: 100%;*/
+
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+
+footer, header, hgroup, menu, nav, section {
+
+    display: block;
+
+}
+
+
+
+ol, ul {
+
+    list-style: none;
+
+    margin:0px;
+
+}
+
+blockquote, q {
+
+    quotes: none;
+
+}
+
+blockquote:before, blockquote:after, 
+
+q:before, q:after {
+
+    content: '';
+
+    content: none;
+
+}
+
+table {
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+}
+
+*{
+
+    margin:0px;
+
+    padding:0px;
+
+}
+
+img{
+
+    max-width:100%;
+
+    border:none;
+
+}
+
+a {
+
+    outline: 0;
+
+    text-decoration:none;
+
+    }
+
+a:hover, a:focus{
+
+    text-decoration:none;
+
+    outline:none;
+
+}
+
+a img {
+
+    border: 0px;
+
+    text-decoration: none;
+
+}
+
+.clr{
+
+    clear:both;
+
+}
+
+
+
+/***********************end reset*********************/
+
+
+
+
+
+/**************************menu***********************/
+
+.product_img {
+  /*font-family: 'EdwardianScriptITC';*/
+  margin-top: 50px;
+  position: relative; 
+  /*min-height: 600px;
+  max-width: 600px;*/
+  width: 100%;
+}
+
+#result {
+    position: absolute;
+    width: 100%;
+}
+
+.nav {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 99;
+
+}
+
+
+
+.nav-container {
+
+  position: fixed;
+
+  top:40px; /* 1 */
+
+  left: 0;
+
+  z-index: 99;
+
+  overflow-y: auto;
+
+  visibility: hidden; /* 2 */
+
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+  -webkit-transform: translateX(-100%);
+
+  -ms-transform: translateX(-100%);
+
+  transform: translateX(-100%);
+
+  -webkit-overflow-scrolling: touch; 
+
+}
+
+.nav-container.is-visible {
+
+  visibility: visible;
+
+  -webkit-transform: translateX(0); 
+
+  -ms-transform: translateX(0);
+
+  transform: translateX(0);
+
+}
+
+.nav-toggle {
+
+  line-height: 1;
+
+  display: inline-block;
+
+  padding:10px;
+
+  border: 0; 
+
+  background-color: #c82030;
+
+  cursor: pointer;
+
+}
+
+.nav-toggle .icon-menu {
+
+  position: relative;
+
+  display: inline-block; 
+
+  width: 28px;
+
+  height: 20px;
+
+  vertical-align: middle;
+
+  fill: none;
+
+}
+
+.icon-menu .line {
+
+  position: absolute;
+
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+
+  height: 4px;
+
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+  background-color: #fff;
+
+}
+
+.icon-menu .line-1 { top: 0; } 
+
+.is-active .icon-menu .line-1 {
+
+  -webkit-transform: translateY(8px) translateX(0) rotate(45deg);
+
+  -ms-transform: translateY(8px) translateX(0) rotate(45deg);
+
+  transform: translateY(8px) translateX(0) rotate(45deg); 
+
+}
+
+.icon-menu .line-2 {
+
+  top: 50%;
+
+  margin-top: -2px;
+
+}
+
+.is-active .icon-menu .line-2 { opacity: 0; }
+
+.icon-menu .line-3 { bottom: 0; }
+
+.is-active .icon-menu .line-3 { 
+
+  -webkit-transform: translateY(-8px) translateX(0) rotate(-45deg);
+
+  -ms-transform: translateY(-8px) translateX(0) rotate(-45deg);
+
+  transform: translateY(-8px) translateX(0) rotate(-45deg);
+
+}
+
+
+
+.nav-menu li:last-child{ 
+
+    border-right:none!important;
+
+}
+
+.main_dis{
+
+    font-size:11px;
+
+    width:110px;
+
+}
+
+.main_m{
+
+    font-size:18px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+
+/*****custum********/
+
+ @media (min-width: 768px) {
+
+.nav,
+
+ .nav-container,
+
+ .nav-container.is-visible {
+
+  position: static;
+
+  top: auto;
+
+  left: auto;
+
+  /*z-index: auto;*/
+
+  -webkit-transform: translateX(0);
+
+  -ms-transform: translateX(0);
+
+  transform: translateX(0);
+
+}
+
+
+
+.nav-container,
+
+.nav-container.is-visible {
+
+  visibility: visible;
+
+  height: auto;
+
+  min-height: 0; 
+
+  overflow-y: visible;
+
+}
+
+
+
+.nav-toggle {
+
+    display: none;
+
+}
+
+}
+
+
+
+.nav li {
+
+    display: inline-block;
+
+    position: relative;
+
+    padding:0 12px;
+
+}
+
+.nav li:last-child {
+
+  margin: 0;
+
+}
+
+.nav li ul {
+
+    background: #fff;
+
+    border: 1px solid #ccc;
+
+    top: 57px;
+
+    transition: all 0.5s ease-in;
+
+    box-shadow: 0 0 23px -15px #333333;
+
+    border-radius: 0;
+
+}
+
+
+
+.nav li ul li:last-child a{
+
+    border-bottom: none;
+
+    border-bottom-left-radius: 5px;
+
+    border-bottom-right-radius: 5px; 
+
+}
+
+.nav li ul::before{
+
+    position:absolute;
+
+    top: -26px;
+
+    left:25px;
+
+    content:"\f0de";
+
+    font-family:FontAwesome;
+
+    font-size:40px; 
+
+    display: none; 
+
+}
+
+.nav li ul li{
+
+    border-right:none;
+
+    padding:0px;
+
+}
+
+.nav li ul li a {
+
+    display: block;
+
+    font-size: 15px;
+
+    padding:7px  10px;
+
+    text-align: left; 
+
+}
+
+.nav li:not(:last-child)::after {
+
+    color: #ffffff;
+
+    content: "/";
+
+    position: absolute;
+
+    right: -6px;
+
+    top: 10px;
+
+}
+
+.nav li a {
+
+    margin: 0;
+
+    transition: all 0.2s ease-in;
+
+    display: block;
+
+    padding: 18px 0;
+
+    position: relative;
+
+    text-align: right;
+
+    font-size: 13px;
+
+    color: #000000;
+
+    font-family: "Montserrat";
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+}
+
+.nav li a::after {
+
+  display:none; 
+
+  content: '';
+
+  border-bottom: solid 2px #fff;  
+
+  transform: scaleX(0);  
+
+  transition: transform 250ms ease-in-out;
+
+}
+
+.nav li a:hover::after { transform: scaleX(1); }
+
+.nav li a::after{ transform-origin:100% 50%; }
+
+.nav li a::after{  transform-origin:  0% 50%;} 
+
+.nav li a:hover {
+
+    color: #000; 
+
+}
+
+.nav li{
+
+    position: relative;
+
+}
+
+.nav li:not(:first-child)::before {
+
+    border-radius: 50%;
+
+    color: #a9a9a9;
+
+    content: "/";
+
+    position: absolute;
+
+    left: -5px;
+
+    top: 51%;
+
+    transform: translateY(-50%);
+
+    font-size: 13px;
+
+}
+
+.nav li ul {
+
+    position: absolute;
+
+    opacity: 0;
+
+    transition: all 0.2s ease-in;
+
+    width:250px;
+
+    display: none;
+
+}
+
+
+
+.nav li:hover ul {
+
+    display: block;
+
+}
+
+.nav li ul li::after{
+
+    display: none;
+
+}
+
+.nav li ul li a{
+
+    border-bottom:1px solid #ccc;
+
+    color: #000;
+
+    transition: all 0.2s ease-in;
+
+}
+
+.nav li ul li a:hover{
+
+    color: #fe3c5c;
+
+    text-indent:5px;
+
+}
+
+.nav li.hover ul {
+
+    opacity: 1;
+
+}
+
+
+
+.nav li li {
+
+  display: block;
+
+}
+
+
+
+/**********************end menu***********************/
+
+.audio-control .row {
+
+    margin: 0;
+
+}
+
+button.start-recording::before {
+
+    position: relative;
+
+    display: inline-block;
+
+    content: "Aufnahme starten";
+
+}
+
+button.stop-recording::before {
+
+    position: relative;
+
+    display: inline-block;
+
+    content: "Stop Recording";
+
+}
+
+.recorderButton .timer {
+
+  display: inline-block;
+
+  margin-left: 30px;
+
+}
+
+button.recorderButton.activated.stop-recording {
+
+    background: red;
+
+}
+
+.site-footer{
+
+  margin-top:0
+
+}
+
+.main-content {
+
+    padding-top: 0;
+
+}
+
+.recorder.holder button:focus {
+
+    outline: none;
+
+    border: none;
+
+} 
+
+.audio-control {
+
+    /*margin: 10px auto 10px auto;*/
+
+}
+
+.menuWrapper {
+
+    height: 100vh;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+
+    -webkit-box-pack: justify;
+
+    -ms-flex-pack: justify;
+
+    justify-content: space-between;
+
+    max-width: 25em;
+
+    min-width: 15em;
+
+    -ms-flex-negative: 2;
+
+    flex-shrink: 2;
+
+    -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+    background-color: #fff;
+
+    border-right: 1px solid #e5e5e5;
+
+}
+
+.menu {
+
+    overflow-y: scroll;
+
+    overscroll-behavior-x: none;
+
+    padding: 2em;
+
+    -webkit-box-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+}
+
+.logo {
+
+    width: 13em;
+
+    margin-bottom: .5em;
+
+}
+
+.menuHead {
+
+    text-align: center;
+
+    margin-top: 1em;
+
+    margin-bottom: 1em; 
+
+}
+
+.optionTitle {
+
+    margin-bottom: .25em;
+
+}
+
+.recorderButton.activated {
+
+    color: #fff;
+
+    background-color: #cfa44e;
+
+}
+
+.recorderButton {
+
+    /*width: 100%;*/
+
+    height: 2.75em;
+
+    color: #cfa44e;
+
+    background-color:#f6ede6;
+
+    font-weight: 500;
+
+    padding: 0 20px;
+
+}
+
+button, input[type=submit] {
+
+    font-size: 1em;
+
+    padding: .75em;
+
+    outline: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    appearance: none;
+
+    border: none;
+
+}
+
+.recorder h2{
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    text-transform: inherit;
+
+    letter-spacing: unset;
+
+}
+
+
+
+.recorderButton.activated:hover{ 
+
+    opacity: .6;
+
+}
+
+.recorderButton.activated {
+
+    color: #fff;
+
+    background-color: #cfa44e;;
+
+}
+
+.recorderButton:hover {
+
+    /*border: .3em solid  #cfa44e;*/
+
+    cursor: pointer;
+
+}
+
+/*:root {
+
+    --colorPrimaryLight: #f6ede6;
+
+    --colorPrimary: #cfa44e;
+
+}*/
+
+.custom-checkbox {
+
+  display: block;
+
+  position: relative;
+
+  padding-left: 35px;
+
+  margin-bottom: 12px;
+
+  cursor: pointer;
+
+  -webkit-user-select: none;
+
+  -moz-user-select: none;
+
+  -ms-user-select: none;
+
+  user-select: none;
+
+  padding: 9px 8px;
+
+  border: 1px solid #ccc;
+
+}
+
+
+
+/* Hide the browser's default checkbox */
+
+.custom-checkbox input {
+
+  position: absolute;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+  height: 0;
+
+  width: 0;
+
+}
+
+
+
+/* Create a custom checkbox */
+
+.checkmark { 
+
+    position: absolute;
+
+    top: 10px;
+
+    left: auto;
+
+    height: 22px;
+
+    width: 22px;
+
+    background-color: #eee;
+
+    right: 10px;
+
+}
+
+
+
+/* On mouse-over, add a grey background color */
+
+.custom-checkbox:hover input ~ .checkmark {
+
+  background-color: #ccc;
+
+}
+
+
+
+/* When the checkbox is checked, add a blue background */
+
+.custom-checkbox input:checked ~ .checkmark {
+
+  background-color: #cfa44e; 
+
+}
+
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+
+  content: "";
+
+  position: absolute;
+
+  display: none;
+
+}
+
+
+
+/* Show the checkmark when checked */
+
+.custom-checkbox input:checked ~ .checkmark:after {
+
+  display: block; 
+
+}
+
+
+
+/* Style the checkmark/indicator */
+
+.custom-checkbox .checkmark:after {
+
+  left: 9px;
+
+  top: 5px;
+
+  width: 5px;
+
+  height: 10px;
+
+  border: solid white;
+
+  border-width: 0 3px 3px 0;
+
+  -webkit-transform: rotate(45deg);
+
+  -ms-transform: rotate(45deg);
+
+  transform: rotate(45deg); 
+
+}
+
+.most-sec {
+
+    margin-top: 15px;
+
+}
+
+.most-sec-para {
+
+    margin-bottom: 15px;
+
+}
+
+.disclaimer-text {
+
+    font-size: .78em;
+
+    color: #898989;
+
+    padding-left: .5em;
+
+}
+
+.layout-sec h2.optionTitle,
+
+.beschr-sec h2.optionTitle,
+
+.deine-Details h2.optionTitle,
+
+.background-color h2.optionTitle {
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    text-transform: inherit;
+
+    letter-spacing: unset;
+
+}
+
+/*.layout-sec {
+
+    padding: 0 15px;
+
+}*/
+
+
+
+
+
+/* The container */
+
+.custom-radio {
+
+ display: block;
+
+    position: relative;
+
+    padding-left: 35px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    padding: 9px 8px;
+
+    border: 1px solid #ccc;
+
+}
+
+
+
+.custom-radio-font {
+
+ display: block;
+
+    position: relative;
+
+    padding-left: 35px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    padding: 9px 8px;
+
+    border: 1px solid #ccc;
+
+}
+
+
+
+/* Hide the browser's default radio button */
+
+.custom-radio input { 
+
+  position: absolute;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+}
+
+
+
+.custom-radio-font input { 
+
+  position: absolute;
+
+  opacity: 0;
+
+  cursor: pointer;
+
+}
+
+ 
+
+/* Create a custom radio button */
+
+.custom-radio .checkmark {
+
+  position: absolute;
+
+  top: 8px;
+
+  left: auto;
+
+  height: 22px;
+
+  width: 22px;
+
+  background-color: #eee;
+
+  right: 10px; 
+
+  border-radius: 50%; 
+
+}
+
+
+
+.custom-radio-font .checkmark {
+
+  position: absolute;
+
+  top: 10px;
+
+  left: auto;
+
+  height: 22px;
+
+  width: 22px;
+
+  background-color: #eee;
+
+  right: 10px; 
+
+  border-radius: 50%; 
+
+}
+
+
+
+/* On mouse-over, add a grey background color */
+
+.custom-radio:hover input ~ .checkmark { 
+
+  background-color: #ccc; 
+
+} 
+
+
+
+.custom-radio-font:hover input ~ .checkmark { 
+
+  background-color: #ccc; 
+
+} 
+
+
+
+/* When the radio button is checked, add a blue background */
+
+.custom-radio input:checked ~ .checkmark { 
+
+  background-color: #cfa44e;
+
+}
+
+
+
+.custom-radio-font input:checked ~ .checkmark { 
+
+  background-color: #cfa44e;
+
+}
+
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+
+  content: "";
+
+  position: absolute;
+
+  display: none;
+
+}
+
+
+
+/* Show the indicator (dot/circle) when checked */
+
+.custom-radio input:checked ~ .checkmark:after {
+
+  display: block;
+
+}
+
+
+
+.custom-radio-font input:checked ~ .checkmark:after {
+
+  display: block;
+
+}
+
+
+
+/* Style the indicator (dot/circle) */
+
+.custom-radio .checkmark:after {
+
+  top: 9px;
+
+  left: 9px;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: none;
+
+}
+
+
+
+.custom-radio-font .checkmark:after {
+
+  top: 9px;
+
+  left: 9px;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: none;
+ 
+}
+
+.optionInput {
+
+    width: 100%;
+
+}
+
+input[type=text].optionInput{
+
+    font-size: 1em;
+
+    min-height: 1em;
+
+    padding: .75em;
+
+    -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    appearance: none;
+
+    background: #f5f5f5;
+
+    border: none;
+
+}
+
+h3 {
+
+    font-size: 1.05rem;
+
+    font-weight: 500;
+
+    margin-top: 1em;
+
+    margin-bottom: .25em;
+
+}
+
+.beschr-sec,.layout-sec, .background-color {
+
+    padding-bottom: 2em;
+
+}
+
+.buttonWrapper {
+
+    width: 100%;
+
+    padding: 2em;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid #e5e5e5;
+
+    background: #fff;
+
+}
+
+.btnMenuSecondary {
+
+    -webkit-box-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    font-weight: 500;
+
+    color: #000;
+
+    background: #f5f5f5; 
+
+    -webkit-box-flex: 2;
+
+    -ms-flex: 2;
+
+    flex: 2; 
+
+}
+
+.buttonWrapper>button:nth-child(2) {
+
+    margin-left: .5em;
+
+}
+
+.btnMenuPrimary:disabled {
+
+    opacity: .4;
+
+}
+
+.btnMenuPrimary {
+
+    -webkit-box-flex: 4;
+
+    -ms-flex: 4;
+
+    flex: 4;
+
+    font-weight: 500;
+
+    color: #fff;
+
+    background-color:  #cfa44e;
+
+}
+
+.btnMenuSecondary:hover {
+
+    background: #e5e5e5;
+
+}
+
+.buttonWrapper button:hover{ 
+
+   cursor: pointer;
+
+}
+
+.background-color{
+
+}
+
+
+
+/* The container */
+
+.background-color .custom-radio {
+
+    display: block;
+
+    position: relative;
+
+    padding-left: 35px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    padding: 9px 8px;
+
+    border: 1px solid #ccc; 
+
+}
+
+
+
+.background-color .custom-radio-font {
+
+    display: block;
+
+    position: relative;
+
+    padding-left: 35px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+
+    user-select: none;
+
+    padding: 9px 8px;
+
+    border: 1px solid #ccc; 
+
+}
+
+
+
+/* Hide the browser's default radio button */
+
+.background-color .color-radio input { 
+
+  position: absolute;
+
+  opacity: 0;
+
+  cursor: pointer; 
+
+}
+
+.optionInput label.optionLabel span.checkmark {
+
+    border-radius: .2em;
+
+    text-align: center;
+
+}
+
+.optionInput label.optionLabel span.checkmark img {
+
+    width: 12px;
+
+    transition: .2s;
+
+    opacity: 0;
+
+}
+
+.optionInput label.optionLabel input:checked ~ span.checkmark img {
+
+  opacity: 1
+
+}
+
+/* Create a custom radio button */
+
+.background-color .color-radio .checkmark {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    background-color: none;
+
+    right: 10px;
+
+    border-radius: 0;
+
+}
+
+
+
+/* On mouse-over, add a grey background color */
+
+.background-color .color-radio:hover input ~ .checkmark {
+
+  background-color: transparent;
+
+  border: 4px solid #cfa44e; 
+
+}
+
+
+
+/* When the radio button is checked, add a blue background */
+
+.background-color .color-radio input:checked ~ .checkmark {
+
+  background-color: transparent; 
+
+  border: 4px solid #cfa44e;
+
+}
+
+.background-color .color-radio input ~ .checkmark{
+
+  background-color: transparent;
+
+  border: 4px solid transparent;
+
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.background-color .color-radi .checkmark:after {
+
+  content: "";
+
+  position: absolute;
+
+  display: none;
+
+}
+
+
+
+/* Show the indicator (dot/circle) when checked */
+
+.background-color .color-radio input:checked ~ .checkmark:after { 
+
+  display: block;
+
+}
+
+
+
+/* Style the indicator (dot/circle) */
+
+.background-color .color-radio .checkmark:after {
+
+  top: 9px;
+
+  left: 9px;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: none;
+
+} 
+
+.background-color .color-radio { 
+
+  width: 55px;
+
+  -webkit-box-sizing: border-box;
+
+  box-sizing: border-box; 
+
+  -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
+
+  height: 55px; 
+
+}
+
+.background-color .color-radio label{ 
+
+  margin: 0;
+
+}
+
+label.color-radio {
+
+    position: relative;
+
+    margin: 5px;
+
+}
+
+.background-color-inner {
+
+    /*background: #f5f5f5;*/
+
+    padding: 7px 0; 
+
+    /*text-align: center; */
+
+}
+
+.poster.landscape {
+
+    max-width: 62.5vw;
+
+    min-width: 33em;
+    height: 130px;
+    position: relative;
+
+}
+
+.hiddenwave {
+    visibility: hidden;
+}
+
+.poster {
+
+    -webkit-box-flex: 1;
+
+    -ms-flex-positive: 1;
+
+    flex-grow: 1;
+
+    max-width: 68vh;
+
+    min-width: 25em;
+
+    overflow: hidden;
+
+/*     background-color: #fff; */ 
+
+    text-align: center; 
+
+}
+
+.sticky { 
+
+    position: -webkit-sticky; 
+
+    position: sticky;
+
+}
+
+.posterWrapper {
+    position: relative;
+    /*-webkit-box-flex: 1;
+
+    -ms-flex: 1;
+
+    flex: 1;
+
+    height: 100vh;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
+
+    padding: 50px 45px;
+
+    background: #eee;*/
+
+}
+
+canvas#soundwave_canvas {
+    /*width: 100%;
+    height: 100%; */
+
+}
+
+.sw-actions-container {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.sw-actions-container {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 100%;
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-shadow: none;
+    outline: 0;
+    line-height: 20px;
+}
+.sw-actions-container * {
+    pointer-events: auto;
+}
+.sw-actions-container>.sw-actions-wrapper {
+    position: absolute;
+}
+.sw-actions-wrapper.sw-pos-top {
+    top: 0px;
+    left: 15px;
+    cursor: pointer;
+}
+.sw-actions-wrapper.sw-pos-top {
+    left: 90%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.voice-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+.color-six{
+
+  fill : #d0e7ff;
+
+}
+
+  div#colorInput {
+
+    /*padding: 0 26px;*/
+
+    width: 100%;
+
+}
+
+.labeling .form-group .form-control {
+
+    box-shadow: none;
+    border-radius: 0;
+    /*max-width: 60%;*/
+    color: #000000;
+    height: 40px;
+    background: transparent;
+
+}
+
+.layout-sec label.custom-radio,
+
+.choose-font label.custom-radio, 
+
+.layout-sec label.custom-radio-font, 
+
+.choose-font label.custom-radio-font,
+
+.optionInput label.optionLabel, 
+
+.product-dtl-right-section .menuSection .optionDescription {
+    max-width: 100%
+}
+
+.product-dtl-right-section { 
+
+    padding: 30px 30px;
+    background: #ffffff;
+    width: 100%;
+ 
+}
+
+.product_addtocart button.btn {
+
+    height: 2.75em;
+
+    background: #000;
+
+    font-weight: 500;
+
+    padding: 0 20px;
+
+    border-radius: 0;
+
+    color: #fff;
+
+    outline: none !important;
+
+}
+
+.product-dtl-right-section .product_tt {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin: 0 0 10px;
+
+}
+.product-dtl-right-section h2.optionTitle { 
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+.product-dtl-right-section label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.product-dtl-right-section .layout-sec,
+.product-dtl-right-section .background-color,
+.product-dtl-right-section .labeling,
+.product-dtl-right-section .choose-font,
+.product-dtl-right-section .product_addtocart,
+.product-dtl-right-section .recorder-main, 
+.product-dtl-right-section .menuSection { 
+    padding: 20px 0 0;
+}
+
+.justify-content-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.align-items-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #cfa44e;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #cfa44e;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+label.switch.custom-radio-font {
+    border: none;
+}
+
+.canvas-container {
+    /*max-width: 100%;
+    width: 100% !important;*/
+    background-size: contain !important;
+}
+
+canvas {
+    /*width: 100% !important;*/
+    display: inline-block;
+    vertical-align: baseline;
+}
+.product-dtl-right-section label.custom-radio.optionLabel span.checkmark {
+    left: 0;
+}
+.product-dtl-right-section label.custom-radio.optionLabel {
+    border: none;
+    padding: 5px 0 0 30px;
+    margin: 0;
+}
+
+.sw-product-designer-wrapper {
+    margin: 20px 0;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    /*display: none;*/
+}
+.sw-clearfix {
+    zoom: 1;
+}
+.sw-container div, .sw-container input, .sw-container label, .sw-container picture, .sw-container select, .sw-container span, .sw-container textarea {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    max-width: 100%;
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-shadow: none;
+    outline: 0;
+    line-height: 20px;
+}
+.sw-container>div {
+    position: relative;
+}
+.sw-container {
+    position: relative;
+    max-width: 100%;
+    clear: both!important;
+    color: rgba(0,0,0,0.8);
+    margin: 0 auto;
+    width: 100%;
+}
+.result-wrapper {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+.sw-container>.sw-main-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    min-height: 400px;
+    background: #f9f9f9;
+    -webkit-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+}
+.sw-main-wrapper>.sw-snap-line-h, .sw-main-wrapper>.sw-snap-line-v {
+    position: absolute;
+    z-index: 100;
+    display: none;
+    pointer-events: none;
+}
+.sw-main-wrapper>.sw-snap-line-h {
+    border-top: 1px dashed #00b5ad;
+    width: 100%;
+    height: 2px;
+    top: 10px;
+    left: 0;
+}
+.sw-main-wrapper>.sw-snap-line-v {
+    border-left: 1px dashed #00b5ad;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 10px;
+}
+.sw-actions-container {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.modal-header-pro {
+    text-align: center;
+    border: none;
+}
+.modal-body-pro {
+    padding: 0 60px 30px;
+}
+
+.modal-body-pro {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.modal-body-pro p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.btn-green-pro {
+    margin-top: 9px;
+    background: #cfa44e;
+    color: white;
+    width: 100%;
+}
+#wave_mic_div {
+    display: none;
+}
+@media only screen and (max-width:1024px) {
+
+  .recorder-main.container {
+
+    margin: 25px 0;
+
+}
+.product-dtl-right-section{
+  margin-left: 20%;
+}
+ 
+  .voice-inner {
+
+    flex-wrap: wrap;  
+
+    display: block;
+
+}
+
+.menuWrapper {
+
+    max-width: 100%;
+
+}
+
+  canvas#soundwave_canvas {
+
+    height: 100%;
+
+    width: 100%;
+
+}
+
+  .poster.landscape {
+
+    max-width: 100%;
+
+    min-width: 100%;
+    height: 130px;
+
+}
+
+  div#colorInput {
+
+    padding: 0 26px;
+
+}
+
+  .posterWrapper{
+
+    padding:10px;
+
+}
+
+  .posterWrapper{
+
+    height: 100%;
+
+    display: block; 
+
+  }
+
+}
+
+@media only screen and (max-width:980px) {
+  .product-dtl-right-section{
+    margin-left: 0;
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .row.content .col-sm-6 {
+    width: 100%;
+    float: none; 
+}
+.product_img { 
+    position: relative;
+    margin:50px auto 50px auto;
+    min-height: auto;
+    max-width: initial;
+}
+canvas.result {
+    width: 100%; 
+    /*height: 100%;*/
+} 
+div#colorInput {
+    padding: 0 10px;
+}
+}
+
+@media only screen and (max-width:767px) {
+
+  label.color-radio {
+
+  margin: 5px;
+
+}
+
+}
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+    .row.content {/*height: 1500px*/}
+
+    
+
+    /* Set gray background color and 100% height */
+
+    .sidenav {
+
+      background-color: #f1f1f1;
+
+      height: 100%;
+
+    }
+
+    
+
+    /* Set black background color, white text and some padding */
+
+    footer {
+
+      background-color: #555;
+
+      color: white;
+
+      padding: 15px;
+
+    }
+
+    
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+
+    @media screen and (max-width: 767px) {
+
+      .sidenav { 
+
+        height: auto;
+
+        padding: 15px;
+
+      }
+
+      .row.content {height: auto;} 
+
+    }
