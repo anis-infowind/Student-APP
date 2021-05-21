@@ -23,7 +23,7 @@
         var Button = actions.Button;
         var Redirect = actions.Redirect;
         var titleBarOptions = {
-            title: 'Welcome',
+            title: 'Home',
         };
         var myTitleBar = TitleBar.create(app, titleBarOptions);
 

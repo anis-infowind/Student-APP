@@ -11,29 +11,140 @@
 }
 footer.main-footer {
     border-top: 1px solid #ccc;  
-}
+} 
 a.edit-row {
     background: #138D75;
     display: inline-block;
     width: 25px;
     height: 25px;
     color: #fff;
-    text-align: center;
+    text-align: center; 
     line-height: 27px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 14px;  
 }
-a.delete-row { 
+a.delete-row {
     background:#E74C3C;
-    display: inline-block;
+    display: inline-block; 
     width: 25px;
     height: 25px;
     color: #fff;
     text-align: center;
     line-height: 27px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 14px; 
 }
-a.btn.btn-primary.add-discount{
+.btn.btn-primary.add-discount{
 	background: #117864
+}
+.collection-product-list ul {
+    list-style: none; 
+} 
+.collection-product-list ul {
+    list-style: none; 
+    padding: 0px;
+    margin-top: 5px;
+} 
+.collection-product-list ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+span.remove_collection {
+    background: #f00;
+    display: inline-block;
+    color: #fff;
+    width: 13px;
+    height: 13px; 
+    line-height: 14px;
+    text-align: center;
+    border-radius: 50%; 
+}
+span.remove_collection:hover{ 
+	cursor: pointer; 
+} 
+.nav li a .fa-tag {
+    margin-right: 9px;
+    font-size: 16px;
+}
+.collection-list select, .product-list select {
+    background-image: none !important;
+} 
+.delte-btn1{
+	background:#E74C3C !important;
+	color: #fff !important;
+	border: none !important
+}
+#modal2 .modal-body {
+    padding: 15px;
+}
+#modal2 button.close {
+    background: red;
+    opacity: 1;
+    display: inline-block;
+    text-shadow: none !important;
+    color: #fff;
+    display: inline-block;
+    width: 21px;
+    border-radius: 4px; 
+}
+#modal2 {
+    background-color: unset;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+select {
+  width: 400px;
+  padding: 8px 16px;
+}
+select option {
+  font-size: 14px;
+  padding: 8px 8px 8px 28px;
+  position: relative;
+  color: #333;
+}
+select option:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  z-index: 1;
+}
+select option:checked:after {
+    content: attr(title);
+    background: none;
+    color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 8px 8px 8px 28px;
+    border: none;
+}
+select option:checked:before {
+  border-color: blue;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMC42MSA4LjQ4Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzNlODhmYTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkFzc2V0IDg8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJfMSIgZGF0YS1uYW1lPSIxIj48cmVjdCBjbGFzcz0iY2xzLTEiIHg9Ii0wLjAzIiB5PSI1LjAxIiB3aWR0aD0iNSIgaGVpZ2h0PSIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0Ljk3IDAuMDEpIHJvdGF0ZSg0NSkiLz48cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjUuMzYiIHk9Ii0wLjc2IiB3aWR0aD0iMiIgaGVpZ2h0PSIxMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNC44NiAtMy4yNikgcm90YXRlKDQ1KSIvPjwvZz48L2c+PC9zdmc+);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.collection-list {
+    margin-top: 15px;
 }

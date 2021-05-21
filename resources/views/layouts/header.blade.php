@@ -19,7 +19,7 @@
 
         <link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 
-        <link href="{{ asset('public/bootstrap-modal/css/bootstrap-modal.css') }}" rel="stylesheet" type="text/css" />
+       <!--  <link href="{{ asset('public/bootstrap-modal/css/bootstrap-modal.css') }}" rel="stylesheet" type="text/css" /> -->
 
         <!-- Datatables 1.10.19 -->
 
@@ -89,7 +89,7 @@
 
                           <span class="icon-bar"></span>
 
-                        </button> 
+                        </button>
 
                         @if(!empty(Auth::user()))
 
@@ -108,7 +108,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="home "> 
+                            <li class="home">
                                 @if(!empty(Auth::user()))
                                 @php $shopname = explode('.',Auth::user()->name) @endphp
                                 <a href="{{ url('/?shop='.$shopname[0]) }}"><i class="glyphicon glyphicon-home"></i>Home</a>
@@ -117,7 +117,7 @@
                                 @endif
                             </li>
                             <li class="home option">
-                                <a href="{{ url('/discounts') }}"><i class="glyphicon glyphicon-cog"></i>Discount Settings</a>
+                                <a href="{{ url('/discounts') }}"><i class="fa fa-tag fa-lg"></i> Discount Settings</a>
                             </li>
                             <li class="home option">
                                 <a href="{{ url('/settings') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a>

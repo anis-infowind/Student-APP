@@ -22,7 +22,7 @@
 
             </div>
 
-        </div>    
+        </div>
 
         <div class="row">
 
@@ -32,11 +32,11 @@
 
                 <form method="post" action="{{url('settings/update')}}" class="form-horizontal">
 
-                    <div class="form-group">
+                    <div class="form-group"> 
 
-                        <label class="control-label col-sm-2" for="email">Button text <span style="color:red;">*</span></label>
+                        <label class="control-label col-sm-2" for="email">Button text <span style="color:red;">*</span></label> 
 
-                        <div class="col-sm-10">
+                        <div class="col-sm-10">  
 
                             <input type="text" name="student_btn_text" class="form-control" placehoder="Enter button text." value="{{$settings->meta_value}}" required>
 
@@ -48,7 +48,7 @@
 
                         <div class="col-sm-offset-2 col-sm-10">
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary add-discount">Submit</button> 
 
                         </div>
 

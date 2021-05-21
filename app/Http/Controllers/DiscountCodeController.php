@@ -504,10 +504,6 @@ class DiscountCodeController extends Controller
             
         }
 
-        echo "test";
-        echo "<pre>";
-        print_r($update_price_rule_json);die;
-
         // update price rule
         $price_rule_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$rule_id.".json", json_encode($update_price_rule_json), 'PUT', array('Content-Type: application/json'));
 
@@ -560,6 +556,211 @@ class DiscountCodeController extends Controller
 
             //return redirect('/settings');
             return view('settings', ['settings' => $settings]);
+        }
+    }
+
+    public function showVerifyButton()
+    {
+        $setting = Settings::where('meta_key', '=', 'student_btn_text')->first();
+        $shop = Auth::user();
+
+        if(!empty($setting)){
+
+            return Response::json(\View::make('verify-button', ['setting' => $setting, 'shop' => $shop])->render(), );
+        } else {
+            return Response::json(\View::make('verify-button', ['setting' => []])->render(), );
+        }
+    }
+
+    public function getDiscountCode(Request $request)
+    {
+        //echo "<pre>";
+        //print_r($request->all());die;
+        $shop = Auth::user();
+        $shop_name = $shop->name;
+        $access_token = $shop->password;
+
+        $cart_item_arr = $request->cart_url_array;
+
+        if(!empty($cart_item_arr) && count($cart_item_arr) > 0){
+
+            $product_id_arr = [];
+
+            foreach($cart_item_arr as $cart_item){
+                $get_variant_info = explode("?", $cart_item);
+                $get_variant_id = explode("=", $get_variant_info[1]);
+                $variant_id = $get_variant_id[1];
+
+                $variant_response = shopify_call($access_token, $shop_name, "/admin/variants/".$variant_id.".json", array(), 'GET');
+
+                if(!empty($variant_response['response'])){
+                    $variant = json_decode($variant_response['response'], true);
+                    $product_id = $variant['variant']['product_id'];
+                    $product_id_arr[] = $product_id;
+                }
+            }
+
+            $discount_response = shopify_call($access_token, $shop_name, "/admin/price_rules.json", array(), 'GET');
+
+            //echo "<pre>";
+            //print_r($discount_response['response']);die;
+
+            if(!empty($discount_response['response'])){
+                $discounts = json_decode($discount_response['response'], true);
+                $price_rules_arr = $discounts['price_rules'];
+
+                if(!empty($price_rules_arr) && count($price_rules_arr) > 0){
+                    foreach($price_rules_arr as $price_rule){
+                        $price_rule_id = $price_rule['id'];
+
+                        $start_date = strtotime($price_rule['starts_at']);
+                        $end_date = strtotime($price_rule['ends_at']);
+                        $today_date = time();
+
+                        if(!empty($end_date) && ($end_date != null) && ($today_date < $end_date)){
+                            if($today_date > $start_date){
+
+                                if($price_rule['target_selection'] == 'all'){
+                                    // return discount code
+                                    $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                    if(!empty($discount_code_response['response'])){
+                                        $discounts = json_decode($discount_code_response['response'], true);
+                                        $discount_arr = $discounts['discount_codes'];
+
+                                        $discount_code = $discount_arr[0]['code'];
+                                        
+                                        return json_encode(array('discount_code' => $discount_code));
+                                    }
+                                } else if($price_rule['target_selection'] == 'entitled'){
+                                    $product_ids = $price_rule['entitled_product_ids'];
+                                    $collection_ids = $price_rule['entitled_collection_ids'];
+
+                                    if(!empty($product_ids) && count($product_ids) > 0){
+                                        foreach($product_ids as $product_id){
+                                            if(in_array($product_id, $product_id_arr)){
+                                                // return discount code
+                                                $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                                if(!empty($discount_code_response['response'])){
+                                                    $discounts = json_decode($discount_code_response['response'], true);
+                                                    $discount_arr = $discounts['discount_codes'];
+
+                                                    $discount_code = $discount_arr[0]['code'];
+                                                    
+                                                    return json_encode(array('discount_code' => $discount_code));
+                                                }
+                                            }
+                                        }
+                                    } else if(!empty($collection_ids) && count($collection_ids) > 0){
+                                        foreach($collection_ids as $collection_id){
+                                            $collection_product_response = shopify_call($access_token, $shop_name, "/admin/collections/".$collection_id."/products.json", array(), 'GET');
+
+                                            if(!empty($collection_product_response['response'])){
+                                                $products = json_encode($collection_product_response['response'], true);
+                                                $product_arr = $products['products'];
+
+                                                foreach($product_arr as $product){
+                                                    if(in_array($product['id'], $product_id_arr)){
+                                                        // return discount code
+
+                                                        $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                                        if(!empty($discount_code_response['response'])){
+                                                            $discounts = json_decode($discount_code_response['response'], true);
+                                                            $discount_arr = $discounts['discount_codes'];
+
+                                                            $discount_code = $discount_arr[0]['code'];
+                                                            
+                                                            return json_encode(array('discount_code' => $discount_code));
+                                                        } 
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } else {
+
+                                    }
+                                } else {
+                                    // else
+                                }
+                            }
+                        } else if( ($end_date == null) && ($today_date > $start_date) ){
+                            if($price_rule['target_selection'] == 'all'){
+                                // return discount code
+                                $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                if(!empty($discount_code_response['response'])){
+                                    $discounts = json_decode($discount_code_response['response'], true);
+                                    $discount_arr = $discounts['discount_codes'];
+
+                                    $discount_code = $discount_arr[0]['code'];
+                                    
+                                    return json_encode(array('discount_code' => $discount_code));
+                                }
+                            } else if($price_rule['target_selection'] == 'entitled'){
+                                $product_ids = $price_rule['entitled_product_ids'];
+                                $collection_ids = $price_rule['entitled_collection_ids'];
+
+                                if(!empty($product_ids) && count($product_ids) > 0){
+                                    foreach($product_ids as $product_id){
+                                        if(in_array($product_id, $product_id_arr)){
+                                            // return discount code
+                                            $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                            if(!empty($discount_code_response['response'])){
+                                                $discounts = json_decode($discount_code_response['response'], true);
+                                                $discount_arr = $discounts['discount_codes'];
+
+                                                $discount_code = $discount_arr[0]['code'];
+                                                
+                                                return json_encode(array('discount_code' => $discount_code));
+                                            }
+                                        }
+                                    }
+                                } else if(!empty($collection_ids) && count($collection_ids) > 0){
+                                    foreach($collection_ids as $collection_id){
+                                        $collection_product_response = shopify_call($access_token, $shop_name, "/admin/collections/".$collection_id."/products.json", array(), 'GET');
+
+                                        if(!empty($collection_product_response['response'])){
+                                            $products = json_encode($collection_product_response['response'], true);
+                                            $product_arr = $products['products'];
+
+                                            foreach($product_arr as $product){
+                                                if(in_array($product['id'], $product_id_arr)){
+                                                    // return discount code
+
+                                                    $discount_code_response = shopify_call($access_token, $shop_name, "/admin/price_rules/".$price_rule_id."/discount_codes.json", array(), 'GET');
+
+                                                    if(!empty($discount_code_response['response'])){
+                                                        $discounts = json_decode($discount_code_response['response'], true);
+                                                        $discount_arr = $discounts['discount_codes'];
+
+                                                        $discount_code = $discount_arr[0]['code'];
+                                                        
+                                                        return json_encode(array('discount_code' => $discount_code));
+                                                    } 
+                                                }
+                                            }
+                                        }
+                                    }
+                                } else {
+
+                                }
+                            } else {
+                                // else
+                            }
+                        } else {
+                            // else
+                        }
+                    }
+                }
+
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 

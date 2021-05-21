@@ -17,29 +17,16 @@
                     
 
 @if(config('shopify-app.appbridge_enabled'))
-
     <script src="https://unpkg.com/@shopify/app-bridge{{ config('shopify-app.appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script> 
-
     <script>
-
         var AppBridge = window['app-bridge']; 
-
         var createApp = AppBridge.default; 
-
-        var app = createApp({ 
- 
+        var app = createApp({
             apiKey: '{{ config('shopify-app.api_key') }}',
-
             shopOrigin: '{{ Auth::user()->name }}',
-
             forceRedirect: true,
-
         });
-
     </script>
-
-
-
 @endif
 
                     <!-- jQuery UI 1.11.2 -->
@@ -56,7 +43,7 @@
 
                     <script src="{{ asset('public/bootstrap-modal/js/bootstrap-modalmanager.js') }}" type="text/javascript"></script>
 
-                    <script src="{{ asset('public/bootstrap-modal/js/bootstrap-modal.js') }}" type="text/javascript"></script>
+                   <!--  <script src="{{ asset('public/bootstrap-modal/js/bootstrap-modal.js') }}" type="text/javascript"></script> -->
 
                     <!-- Datatables 1.10.19 JS -->
 
@@ -106,7 +93,7 @@
 
               <div class="modal-body">
 
-                <p>Some text in the modal.</p>
+                <p>Some text in the modal.</p> 
 
               </div>
 
@@ -140,14 +127,42 @@
                   <p>Are you sure you want to delete?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-info">Delete</button>
+                  <button type="button" style="background: #117864 !important;  color: #fff !important; border: none;" class="btn btn-default add-discount1" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-info delte-btn1">Delete</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
 
+       <!--  <script type="text/javascript">
+          $(document).ready(function(){
+            $(".modal-scrollable").click(function(){
+              $(".close").click();
+            });
+          });
+
+        </script> -->
+
     </body>
+
+
+
+<script type="text/javascript">
+  
+      $(document).on("mousedown", '.collection-list option', function(e){
+          e.preventDefault();
+          var originalScrollTop = $(this).parent().scrollTop();
+          console.log(originalScrollTop);
+          $(this).prop('selected', $(this).prop('selected') ? false : true);
+          var self = this;
+          //$(this).parent().focus();
+          setTimeout(function() {
+              $(self).parent().scrollTop(originalScrollTop);
+          }, 0);
+           
+          return false; 
+      });
+</script>
 
 </html>

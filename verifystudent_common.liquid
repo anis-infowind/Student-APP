@@ -21,4 +21,8 @@
   window.verifystudentapps.product_id = "{{ product.id }}";
 {% endif %}
 
+{% if template contains "cart" %}
+window.verifystudentapps.page_type = "cart";
+{% endif %}
+
 </script>

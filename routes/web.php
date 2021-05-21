@@ -49,6 +49,12 @@ Route::post('/discount/update', 'DiscountCodeController@update');
 Route::get('/settings', 'DiscountCodeController@settings');
 Route::post('/settings/update', 'DiscountCodeController@updateSettings');
 
+// API for Storefront
+Route::get('/api/button-display', 'DiscountCodeController@showVerifyButton');
+
+Route::get('/api/get-discount-code', 'DiscountCodeController@getDiscountCode');
+Route::post('/api/get-discount-code', 'DiscountCodeController@getDiscountCode');
+
 
 // Uninstalled webhook
 Route::get('/api/app-uninstall', 'WebhookController@appUninstalledWebhook');

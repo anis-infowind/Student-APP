@@ -66,7 +66,8 @@ class HomeController extends Controller
 
                 if(!empty($theme_api['response'])){
                     $theme = json_decode($theme_api['response'], true);
-                    $theme_id = $theme['themes'][0]['id'];
+                    //$theme_id = $theme['themes'][0]['id'];
+                    $theme_id = 120205148224;
 
                     // Modify test assets snippets data
                     $appdata = file_get_contents(url('/').'/verifystudent_common.liquid', false, stream_context_create($arrContextOptions));
@@ -120,7 +121,7 @@ class HomeController extends Controller
                 if(!empty($liquid_array['response'])){
                     $script_tag_array = json_decode($liquid_array['response'], true);
 
-                    $verifystudent_script = url('/').'/public/js/verifystudent.min.js';
+                    $verifystudent_script = url('/').'/public/js/verifystudentcode.min.js';
 
 
                     $script_tag = array(
