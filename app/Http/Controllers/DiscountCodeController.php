@@ -574,8 +574,6 @@ class DiscountCodeController extends Controller
 
     public function getDiscountCode(Request $request)
     {
-        //echo "<pre>";
-        //print_r($request->all());die;
         $shop = Auth::user();
         $shop_name = $shop->name;
         $access_token = $shop->password;
@@ -601,9 +599,7 @@ class DiscountCodeController extends Controller
             }
 
             $discount_response = shopify_call($access_token, $shop_name, "/admin/price_rules.json", array(), 'GET');
-
-            //echo "<pre>";
-            //print_r($discount_response['response']);die;
+            
 
             if(!empty($discount_response['response'])){
                 $discounts = json_decode($discount_response['response'], true);
@@ -745,7 +741,7 @@ class DiscountCodeController extends Controller
                                         }
                                     }
                                 } else {
-
+                                    // else
                                 }
                             } else {
                                 // else

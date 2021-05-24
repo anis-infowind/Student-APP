@@ -55,6 +55,9 @@ Route::get('/api/button-display', 'DiscountCodeController@showVerifyButton');
 Route::get('/api/get-discount-code', 'DiscountCodeController@getDiscountCode');
 Route::post('/api/get-discount-code', 'DiscountCodeController@getDiscountCode');
 
+// Install steps
+Route::get('/app-install-steps', 'InstallationController@index');
+
 
 // Uninstalled webhook
 Route::get('/api/app-uninstall', 'WebhookController@appUninstalledWebhook');

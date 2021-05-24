@@ -112,7 +112,7 @@
 
                     <div class="col-sm-offset-2 col-sm-10"> 
 
-                    <button type="submit" class="btn btn-primary add-discount">Submit</button>
+                    <button type="submit" class="btn btn-primary add-discount">Add</button>
 
                     </div>
 

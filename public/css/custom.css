@@ -6,7 +6,7 @@
     color: #117864;
     background-color: #eee;
 }
-.main-footer a, .soundwave-name {
+.main-footer a, .soundwave-name { 
     color:  #117864 !important;
 }
 footer.main-footer {
@@ -32,7 +32,7 @@ a.delete-row {
     text-align: center;
     line-height: 27px;
     border-radius: 4px;
-    font-size: 14px; 
+    font-size: 14px;
 }
 .btn.btn-primary.add-discount{
 	background: #117864
@@ -90,6 +90,9 @@ span.remove_collection:hover{
 #modal2 {
     background-color: unset;
 }
+
+
+
 
 
 

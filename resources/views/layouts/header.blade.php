@@ -122,12 +122,12 @@
                             <li class="home option">
                                 <a href="{{ url('/settings') }}"><i class="glyphicon glyphicon-cog"></i>Settings</a>
                             </li>
+                            <li class="home option">
+                                <a href="{{ url('/app-install-steps') }}"><i class="glyphicon glyphicon-cog"></i>Installation</a>
+                            </li>
                         </ul>
-
                     </div>
-
                 </div>
-
             </header>
 
             <div id="content">

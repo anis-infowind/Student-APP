@@ -75,6 +75,14 @@ jQuery(function($) {
             $('#modal2').find("#rule_id").val(rule_id);
         });
 
+        //  Step image modal
+        $(".step-image-modal").on("click", function(){
+            $('#modal3').modal('show');
+	        var image_url = $(this).data('step-url');
+
+            $('#modal3').find(".step_image").attr('src', image_url);
+        });
+
         // Remove collection
         $(".remove_collection").on("click", function(){
             $(this).closest('li').remove();

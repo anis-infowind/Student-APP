@@ -80,6 +80,19 @@ class HomeController extends Controller
                     );
 
                     $theme_res = shopify_call($access_token, $shop_name, '/admin/themes/'.$theme_id.'/assets.json', $update_assets, 'PUT');
+
+
+                    // Modify test assets snippets data
+                    $verify_btn_snippet = file_get_contents(url('/').'/verifystudent_btn.liquid', false, stream_context_create($arrContextOptions));
+
+                    $verify_btn_update_assets = array(
+                        "asset" => array(
+                            "key"   => "snippets/verifystudent_btn.liquid",
+                            "value" => $verify_btn_snippet,
+                        )
+                    );
+
+                    $verify_btn_res = shopify_call($access_token, $shop_name, '/admin/themes/'.$theme_id.'/assets.json', $verify_btn_update_assets, 'PUT');
                 }
 
 
