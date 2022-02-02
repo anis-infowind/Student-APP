@@ -156,7 +156,7 @@ table.table.table-bordered th {
 }
 button:focus{ 
     outline: none !important;
-    border: none !important;
+    /* border: none !important; */
     box-shadow: none !important;
 }
 table.table.table-bordered {
@@ -1192,7 +1192,7 @@ li.swatch .sp-replacer, li.swatch .swatch_img, li.variant .variant_img {
 
 table.dataTable tbody th, table.dataTable tbody td {
 
-    padding: 8px 10px;
+    /* padding: 8px 10px; */
 
 }
 
@@ -1587,7 +1587,7 @@ input[type="checkbox"]:checked+label span:after, input[type="radio"]:checked+lab
 
 .selected_products tr th:nth-child(1), .non_selected_products tr th:nth-child(1), .non_selected_variants tr th:nth-child(1) {
 
-    width: 10% !important;
+    /* width: 10% !important; */
 
 }
 
@@ -2009,6 +2009,113 @@ table.dataTable tbody tr {
 
   color:red;
 
+}
+
+.product-filters-block, .collection-filters-block {
+    display:none;
+}
+
+.studentdis-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    min-width: 36px;
+    padding: 7px 16px;
+    line-height: inherit;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none !important;
+    transition-property: background, border, box-shadow;
+    transition-duration: var(--p-override-none, 0.2s);
+    transition-timing-function: var(--p-override-none, cubic-bezier(0.64, 0, 0.35, 1));
+    -webkit-tap-highlight-color: transparent;
+    text-transform: inherit;
+    background: #ffffff;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+    border-radius: 4px;
+    color: #202223;
+    border: 1px solid #babfc3;
+    border-top-color: #c9cccf;
+    border-bottom-color: #babfc4;
+    font-weight: 500;
+}
+.studentdis-btn:hover {
+    background: #f6f6f7;
+    color: #202223;
+}
+.studentdis-btn-primary {
+    background: #00805f;
+    border-width: 1px;
+    border-color: transparent;
+    color: #ffffff;
+}
+.studentdis-btn-primary:hover {
+    background: #006e52;
+    border-color: transparent;
+    color: #ffffff;
+}
+.product_filters button.form, .collection_filters button.form {
+    margin-right: 5px;
+}
+.right_table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    border-bottom: 1px solid #dbe1e8;
+}
+.right_table label {
+    float: left;
+    padding: 0;
+}
+.right_table .product_operations, .right_table .collection_operations {
+    float: right;
+    margin: 0;
+}
+.product_operations li, .collection_operations li {
+    display: inline-block;
+}
+.studentdis-btn-monochrome {
+    background: transparent;
+    border-color: #bf0711;
+    position: relative;
+    color: #bf0711;
+    box-shadow: none;
+}
+.studentdis-btn-monochrome:active, .studentdis-btn-monochrome:focus, .studentdis-btn-monochrome:hover {
+    background-color: initial;
+    border-color: #bf0711;
+    color: #bf0711;
+}
+.selected-products-section, .selected-collections-section {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    max-height: 500px;
+    padding-top: 10px;
+}
+table.table.selected_objects.dataTable {
+    border-top: 1px solid #c4cdd5;
+    border-left: 1px solid #c4cdd5;
+    border-right: 1px solid #c4cdd5;
+    border-radius: 3px;
+    overflow: hidden;
+}
+table.selected_objects {
+    margin: 0px !important;
+    width: 100% !important;
+}
+.option_error.errorr, .no_objects_error .errorr {
+    color: #ff0000;
+    border-color: #c4cdd5 !important;
+}
+.product-filters-block .selected_objects_count, .collection-filters-block .selected_objects_count {
+    padding-bottom: 10px;
+    font-size: 12px;
+    text-align: left;
 }
 
 @media screen and (max-width: 1025px) and (min-width: 768px) {

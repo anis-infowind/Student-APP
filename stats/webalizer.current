@@ -1,0 +1,240 @@
+# Webalizer V2.23-08 Incremental Data - 02/01/2022 20:43:44
+2022 2 1 20 43 44
+75 71 9 23 7 6 3257067 17 3 0
+9 1 47 1 1
+75 71 3257067 9 17 3
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+1 0 441 1
+0 0 0 0
+0 0 0 0
+0 0 0 0
+2 2 9806 0
+47 46 1846384 9
+4 4 19612 0
+0 0 0 0
+0 0 0 0
+16 14 1356309 7
+4 4 19612 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+1 1 4903 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0
+0
+0
+71
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+3
+0
+0
+0
+0
+0
+# -urls- 
+/public/js/app.js
+0 2 3417213301261413744 10791 0 0
+/public/font-awesome/css/font-awesome.min.css
+0 1 0 31291 0 0
+/verifystudent_btn.liquid
+0 9 7236265866960333165 39213 0 0
+/settings
+0 5 0 29195 1 1
+/public/js/verifystudentcode.min.js
+0 14 3403159395259148331 68642 0 0
+/public/css/bootstrap-datetimepicker.min.css
+0 1 0 11406 0 0
+/public/js/bootstrap-datetimepicker.js
+0 2 0 145240 0 0
+/public/sweetalert/css/sweetalert.css
+0 1 0 13877 0 0
+/public/bootstrap/fonts/glyphicons-halflings-regular.woff2
+0 1 0 18195 0 0
+/public/font-awesome/fonts/fontawesome-webfont.woff2
+0 1 0 77774 0 0
+/verifystudent_common.liquid
+0 9 7236265866960333165 48564 0 0
+/public/bootstrap-modal/js/bootstrap-modalmanager.js
+0 2 0 23902 0 0
+/public/sweetalert/js/sweetalert.js
+0 2 0 72446 0 0
+/public/bootstrap/css/bootstrap.min.css
+0 1 7236265866960333165 118206 0 0
+/public/css/bootstrap-datetimepicker.css
+0 1 0 12888 0 0
+/public/js/jquery.validate.js
+0 2 0 89192 0 0
+/
+0 8 8027793279777338469 43326 1 0
+/public/bootstrap/js/bootstrap.min.js
+0 2 0 72500 0 0
+/public/css/app.css
+0 1 0 34895 0 0
+/public/datatable/css/dataTables.bootstrap.min.css
+0 1 0 4368 0 0
+/public/css/custom.css
+0 1 7017786292253699941 3319 0 0
+/public/js/jQuery-2.1.4.min.js
+0 2 0 170010 0 0
+/public/js/bootstrap-datetimepicker.min.js
+0 2 0 79066 0 0
+# End Of Table - urls
+# -sites- (monthly)
+106.220.85.0
+0 1 1 4903 0 0
+-
+188.163.102.0
+0 1 1 4903 0 0
+-
+35.243.132.0
+0 6 6 29418 0 0
+-
+24.2.157.0
+0 1 1 4903 0 0
+-
+35.203.251.0
+0 2 2 9806 0 0
+-
+103.21.54.0
+0 42 39 3100207 2 1643716519
+/
+34.96.130.0
+0 1 0 441 1 1643682727
+-
+107.178.236.0
+0 3 3 14709 0 0
+-
+46.30.62.0
+0 18 18 87777 0 0
+-
+# End Of Table - sites (monthly)
+# -sites- (daily)
+106.220.85.0
+0 1 1 4903 0 0
+-
+188.163.102.0
+0 1 1 4903 0 0
+-
+35.243.132.0
+0 6 6 29418 0 0
+-
+24.2.157.0
+0 1 1 4903 0 0
+-
+35.203.251.0
+0 2 2 9806 0 0
+-
+103.21.54.0
+0 42 39 3100207 2 1643716519
+/
+34.96.130.0
+0 1 0 441 1 1643682727
+-
+107.178.236.0
+0 3 3 14709 0 0
+-
+46.30.62.0
+0 18 18 87777 0 0
+-
+# End Of Table - sites (daily)
+# -referrers- 
+https://p589660.mittwaldserver.info/settings
+0 1
+https://cambridgetestshop.myshopify.com/
+0 9
+https://p589660.mittwaldserver.info/public/bootstrap/css/bootstrap.min.css
+0 1
+https://cambridgetestshop.myshopify.com/password
+0 5
+https://p589660.mittwaldserver.info/public/font-awesome/css/font-awesome.min.css
+0 1
+- (Direct Request)
+0 38
+https://p589660.mittwaldserver.info/
+0 20
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36
+0 42
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.71 Safari/537.36
+0 6
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/76.0.3786.0 Safari/537.36
+0 5
+Expanse indexes the network perimeters of our customers. If you have any questions or concerns, please reach out to: scaninfo
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+0 2
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

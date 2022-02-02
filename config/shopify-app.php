@@ -88,7 +88,7 @@ return [
 
     // Use semver range to link to a major or minor version number.
     // Leaving empty will use the latest verison - not recommended in production.
-    'appbridge_version' => env('SHOPIFY_APPBRIDGE_VERSION', '1'),
+    'appbridge_version' => env('SHOPIFY_APPBRIDGE_VERSION', '2'),
 
     /*
     |--------------------------------------------------------------------------
@@ -145,7 +145,7 @@ return [
     |
     */
 
-    'api_scopes' => env('SHOPIFY_API_SCOPES', 'read_content, write_content, read_themes, write_themes, read_script_tags, write_script_tags, read_products, write_products, read_customers, write_customers, read_orders, write_orders, read_price_rules, write_price_rules, read_discounts, write_discounts'),
+    'api_scopes' => env('SHOPIFY_API_SCOPES', 'read_content, write_content, read_themes, write_themes, read_script_tags, write_script_tags, read_price_rules, write_price_rules, read_discounts, write_discounts,read_products'),
 
     /*
     |--------------------------------------------------------------------------

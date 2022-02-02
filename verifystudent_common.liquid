@@ -12,7 +12,7 @@
     page_type: null,
     template_type: null,
     theme_id: {{ theme.id }},
-    po_url: "https://verifystudent.framework.infowindtech.biz",
+    po_url: "https://p589660.mittwaldserver.info",
   }
 
 
@@ -23,6 +23,14 @@
 
 {% if template contains "cart" %}
 window.verifystudentapps.page_type = "cart";
+window.verifystudentapps.cart = {{ cart | json }}
+if (typeof window.verifystudentapps.cart.items == "object") {
+    for (var i=0; i<window.verifystudentapps.cart.items.length; i++) {
+      ["sku", "grams", "vendor", "url", "image", "handle", "requires_shipping", "product_type", "product_description"].map(function(a) {
+        delete window.verifystudentapps.cart.items[i][a]
+      })
+    }
+}
 {% endif %}
 
 </script>

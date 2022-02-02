@@ -29,13 +29,9 @@
                         <td>{{ $discount['value_type'] }}</td>
                         <td>  
                             
-                            @if($discount['title'] === 'GGGGG')
+                            
                             <a class="edit-row" href="{{url('discount/edit/'.$discount['id'])}}"><i class="fa fa-edit"></i></a> 
-                            <a class="delete-row rule-delete" href="javascript:void(0)" data-rule-id="{{$discount['id']}}" class="rule-delete" data-toggle="modal"><i class="fa fa-trash"></i></a> 
-                            @else
-                            <a class="edit-row" href="javascript:void(0)"><i class="fa fa-edit"></i></a>
-                            <a class="delete-row rule-delete" href="javascript:void(0)"><i class="fa fa-trash"></i></a>
-                            @endif
+                            <a class="delete-row rule-delete" href="javascript:void(0)" data-rule-id="{{$discount['id']}}" class="rule-delete" data-toggle="modal"><i class="fa fa-trash"></i></a>
                             
                         </td> 
                     </tr>

@@ -13,6 +13,7 @@ use App\Settings;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
 use Response;
+use Session;
 
 class InstallationController extends Controller
 {
@@ -23,18 +24,7 @@ class InstallationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $previous_shop = User::orderBy('id','asc')->first();
-
-        if(!empty($previous_shop)) {
-            $user = User::find($previous_shop->id);
-
-            if(!empty($user)) {
-                Auth::login($user);
-
-                $shop = Auth::user();
-            }
-        }
+        
     }
 
     /**

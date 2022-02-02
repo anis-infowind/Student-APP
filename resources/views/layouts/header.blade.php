@@ -1,3 +1,7 @@
+<?php
+$shop = Session::get('shopify_Shop');
+header("Content-Security-Policy: frame-ancestors https://".$shop." https://admin.shopify.com;");
+?>
 <!DOCTYPE html>
 
 <html>
@@ -31,7 +35,7 @@
 
         <!-- Spectrum 1.8.0 -->
 
-        <link href="{{ asset('public/spectrum/css/spectrum.css') }}" rel="stylesheet" type="text/css" />
+        <!-- <link href="{{ asset('public/spectrum/css/spectrum.css') }}" rel="stylesheet" type="text/css" /> -->
 
         <!-- Sweetalert -->
 
@@ -95,11 +99,11 @@
 
                         @php $shopname = explode('.',Auth::user()->name) @endphp
 
-                        <a class="navbar-brand" href="{{ url('/?shop='.$shopname[0]) }}">Verify Students</a>
+                        <a class="navbar-brand" href="{{ url('/?page=home') }}">Verify Students</a>
 
                         @else
 
-                        <a class="navbar-brand" href="{{ url('/') }}">Verify Students</a>
+                        <a class="navbar-brand" href="{{ url('/?page=home') }}">Verify Students</a>
 
                         @endif
 
@@ -111,9 +115,9 @@
                             <li class="home">
                                 @if(!empty(Auth::user()))
                                 @php $shopname = explode('.',Auth::user()->name) @endphp
-                                <a href="{{ url('/?shop='.$shopname[0]) }}"><i class="glyphicon glyphicon-home"></i>Home</a>
+                                <a href="{{ url('/?page=home') }}"><i class="glyphicon glyphicon-home"></i>Home</a>
                                 @else
-                                <a href="{{ url('/') }}"><i class="glyphicon glyphicon-home"></i>Home</a>
+                                <a href="{{ url('/?page=home') }}"><i class="glyphicon glyphicon-home"></i>Home</a>
                                 @endif
                             </li>
                             <li class="home option">

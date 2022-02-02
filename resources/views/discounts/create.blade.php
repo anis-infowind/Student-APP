@@ -18,15 +18,15 @@
 
         <div class="row">
 
-            <form class="form-horizontal" action="{{url('/discount/store')}}" method="post">
+            <form class="form-horizontal submit-discount-form" action="{{url('/discount/store')}}" method="post">
 
                 <div class="form-group"> 
 
-                    <label class="control-label col-sm-2" for="email">Discount code <span style="color:red;">*</span></label>
+                    <label class="control-label col-sm-2" for="discount_code">Discount code <span style="color:red;">*</span></label>
 
                     <div class="col-sm-10">
 
-                        <input type="text" name="discount_code" class="form-control" placeholder="e.g. SPRINGSALE" id="field1" required>
+                        <input type="text" name="discount_code" class="form-control" placeholder="e.g. SPRINGSALE" id="discount_code" required>
 
                     </div>
 
@@ -34,11 +34,11 @@
 
                 <div class="form-group">
 
-                    <label class="control-label col-sm-2" for="pwd">Discount Type</label>
+                    <label class="control-label col-sm-2" for="value_type">Discount Type</label>
 
                     <div class="col-sm-10">
 
-                        <select name="value_type" class="form-control">
+                        <select name="value_type" class="form-control" id="value_type">
 
                             <option value="percentage">Percentage</option>
 
@@ -50,11 +50,11 @@
 
                 <div class="form-group">
 
-                    <label class="control-label col-sm-2" for="pwd">Discount Value <span style="color:red;">*</span></label>
+                    <label class="control-label col-sm-2" for="discount_value">Discount Value <span style="color:red;">*</span></label>
 
                     <div class="col-sm-10">
 
-                        <input type="number" min="1" max="100" name="value" class="form-control" required>
+                        <input type="number" min="1" max="100" name="value" id="discount_value" class="form-control" required>
 
                     </div>
 
@@ -62,11 +62,11 @@
 
                 <div class="form-group">
 
-                    <label class="control-label col-sm-2" for="pwd">Applies To</label>
+                    <label class="control-label col-sm-2" for="apply_to">Applies To</label>
 
                     <div class="col-sm-10">
 
-                        <select name="apply_to" class="form-control applies_to">
+                        <select name="apply_to" class="form-control applies_to" id="apply_to">
 
                             <option value="all_products">All products</option>
 
@@ -82,7 +82,73 @@
 
                     </div>
 
-                </div> 
+                </div>
+                
+                <div class="product-filters-block form-group">
+                    <label class="control-label col-sm-2" for="">&nbsp;</label>
+                    <div class="col-sm-10">
+                        <div class="product_filters">
+                            <button type="button" class="studentdis-btn studentdis-btn-primary form" id="apply_product_filter">Select Products</button>
+                            <div class="right_table">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <label>Selected products</label>
+                                    <ul class="product_operations">
+                                        <li><button type="button" class="studentdis-btn studentdis-btn-monochrome remove-all-products">Remove all</button></li>
+                                    </ul>
+                                </div>
+                                <div class="selected-products-section">
+                                    <table class="table selected_objects selected_products dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-10">Product name</th>
+                                                <th class="col-md-2"><span class="translation_missing" title="">Action</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="no_products_selected">
+                                                <td>No products selected</td><td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="selected_objects_count selected_products_count">Showing 0 entries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-filters-block form-group">
+                    <label class="control-label col-sm-2" for="">&nbsp;</label>
+                    <div class="col-sm-10">
+                        <div class="collection_filters">
+                            <button type="button" class="studentdis-btn studentdis-btn-primary form" id="apply_collection_filter">Select Collections</button>
+                            <div class="right_table">
+                                <div style="display: flex;align-items: center;justify-content: space-between;">
+                                    <label>Selected collections</label>
+                                    <ul class="collection_operations">
+                                        <li><button type="button" class="studentdis-btn studentdis-btn-monochrome remove-all-collections">Remove all</button></li>
+                                    </ul>
+                                </div>
+                                <div class="selected-collections-section">
+                                    <table class="table selected_objects selected_collections dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-10">Collection name</th>
+                                                <th class="col-md-2"><span class="translation_missing" title="">Action</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="no_collections_selected">
+                                                <td>No collections selected</td><td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="selected_objects_count selected_collections_count">Showing 0 entries</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
 
@@ -111,8 +177,9 @@
                 <div class="form-group">
 
                     <div class="col-sm-offset-2 col-sm-10"> 
-
-                    <button type="submit" class="btn btn-primary add-discount">Add</button>
+                    <input type="hidden" name="" id="products_id" value="">
+                    <input type="hidden" name="" id="collections_id" value="">
+                    <button type="submit" class="btn btn-primary add-discount add-discount-btn">Add</button>
 
                     </div>
 

@@ -1,42 +1,42 @@
 Array
 (
-    [id] => 27902476352
-    [name] => Duftoase
+    [id] => 55560470690
+    [name] => DEV // Augenmanufaktur
     [email] => shopify@merconic.de
-    [domain] => all-around-me.de
+    [domain] => am-mrc.myshopify.com
     [province] => 
     [country] => DE
     [address1] => Schönhauser Allee 59B
     [zip] => 10437
     [city] => Berlin
-    [source] => 
-    [phone] => 030726265251
+    [source] => x2click
+    [phone] => 000000000000000
     [latitude] => 52.5450532
     [longitude] => 13.4131246
-    [primary_locale] => de
+    [primary_locale] => en
     [address2] => 
-    [created_at] => 2020-05-14T19:40:35+02:00
-    [updated_at] => 2021-04-27T11:50:16+02:00
+    [created_at] => 2021-03-25T09:17:13+01:00
+    [updated_at] => 2021-11-15T14:49:46+01:00
     [country_code] => DE
     [country_name] => Germany
     [currency] => EUR
     [customer_email] => shopify@merconic.de
     [timezone] => (GMT+01:00) Europe/Berlin
     [iana_timezone] => Europe/Berlin
-    [shop_owner] => Chiara Duft
+    [shop_owner] => am-mrc Admin
     [money_format] => €{{amount_with_comma_separator}}
     [money_with_currency_format] => €{{amount_with_comma_separator}} EUR
     [weight_unit] => kg
     [province_code] => 
-    [taxes_included] => 1
+    [taxes_included] => 
     [auto_configure_tax_inclusivity] => 1
-    [tax_shipping] => 
+    [tax_shipping] => 1
     [county_taxes] => 1
-    [plan_display_name] => Basic Shopify
-    [plan_name] => basic
+    [plan_display_name] => Developer Preview
+    [plan_name] => partner_test
     [has_discounts] => 1
-    [has_gift_cards] => 1
-    [myshopify_domain] => duftoase.myshopify.com
+    [has_gift_cards] => 
+    [myshopify_domain] => am-mrc.myshopify.com
     [google_apps_domain] => 
     [google_apps_login_enabled] => 
     [money_in_emails_format] => €{{amount_with_comma_separator}}
@@ -47,25 +47,17 @@ Array
     [has_storefront] => 1
     [eligible_for_card_reader_giveaway] => 
     [finances] => 1
-    [primary_location_id] => 35691102272
+    [primary_location_id] => 61518839970
     [cookie_consent_level] => implicit
     [visitor_tracking_consent_preference] => allow_all
-    [force_ssl] => 1
     [checkout_api_supported] => 1
     [multi_location_enabled] => 1
     [setup_required] => 
     [pre_launch_enabled] => 
     [enabled_presentment_currencies] => Array
         (
-            [0] => CAD
-            [1] => CHF
-            [2] => CNY
-            [3] => EUR
-            [4] => GBP
-            [5] => INR
-            [6] => JPY
-            [7] => RUB
-            [8] => USD
+            [0] => EUR
         )
 
+    [force_ssl] => 1
 )

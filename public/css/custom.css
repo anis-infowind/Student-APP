@@ -19,13 +19,13 @@ a.edit-row {
     height: 25px;
     color: #fff;
     text-align: center; 
-    line-height: 27px;
+    line-height: 27px; 
     border-radius: 4px;
     font-size: 14px;  
 }
 a.delete-row {
     background:#E74C3C;
-    display: inline-block; 
+    display: inline-block;  
     width: 25px;
     height: 25px;
     color: #fff;
@@ -89,8 +89,8 @@ span.remove_collection:hover{
 }
 #modal2 {
     background-color: unset;
-}
-
+} 
+ 
 
 
 
